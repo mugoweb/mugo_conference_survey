@@ -1,0 +1,12 @@
+input[type="radio"], input[type="checkbox"] {
+    margin: 0.5rem;
+}
+.hidden {
+    visibility: hidden;;
+}
+.subscribe-box {
+    border-bottom: none !important;
+}
+.banner-page {
+    min-height: 450px !important;
+}
