@@ -15,7 +15,6 @@ echo <<<HTML
         id="question{$question[ 'id' ]}"
         name="question{$question[ 'id' ]}"
         rows="5"
-        required
     ></textarea>
     <div class="valid-feedback">
         Looks good!
