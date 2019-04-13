@@ -3,13 +3,13 @@
 $json = <<<JSON
 [
     {
-        "id": "organization",
+        "id": 1,
         "text": "",
         "type": "input",
         "placeholder": "Organization",
         "answers": []
     },{
-        "id": "painpoints",
+        "id": 2,
         "text": "What pain points do you have with your current website?",
         "type": "checkbox",
         "placeholder": "",
@@ -31,7 +31,7 @@ $json = <<<JSON
             }
         ]
     },{
-        "id": "other-painpoints",
+        "id": 3,
         "text": "",
         "type": "textarea",
         "placeholder": "Other pain points or comments.",
