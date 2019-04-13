@@ -1,8 +1,13 @@
 <?php
 
+print '<div class="form-group">';
+if( $question[ 'text' ] )
+{
 echo <<<HTML
-<div class="form-group my-5">
     <label class="form-question" for="question{$question[ 'id' ]}">{$question[ 'text' ]}</label>
+HTML;
+}
+echo <<<HTML
     <textarea 
         class="form-control"
         type="textarea"

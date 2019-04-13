@@ -14,7 +14,7 @@ foreach ( $question[ 'answers' ] as $answer ) {
 }
 
 echo <<<HTML
-<div class="form-group my-5">
+<div class="form-group">
     <label class="form-question" id="question{$question[ 'id' ]}Label">{$question[ 'text' ]}</label>
     <fieldset class="form-group">
         $radioOptions

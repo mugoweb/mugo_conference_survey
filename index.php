@@ -3,65 +3,39 @@
 $json = <<<JSON
 [
     {
-        "id": 1,
-        "text": "Describe the presentation with a single word.",
+        "id": "organization",
+        "text": "",
         "type": "input",
-        "placeholder": "Be creative.",
+        "placeholder": "Organization",
         "answers": []
     },{
-        "id": 2,
-        "text": "In your own words, what is one thing you would change about the presentation if you could?",
-        "type": "textarea",
-        "placeholder": "Please be as specific as possible.",
-        "answers": []
-    },{
-        "id": 3,
-        "text": "How satisfied were you with the presentation?",
-        "type": "select",
-        "placeholder": "Please select an item",
-        "answers": [
-            { 
-                "not_satisfied": "Not Satisfied" 
-            },
-            { 
-                "somewhat_satisfied": "Somewhat Satisfied"
-            },
-            { 
-                "very_satisfied": "Very Satisfied"
-            }
-        ]
-    },{
-        "id": 4,
-        "text": "Besides talk to us, what else did you do at the conference?",
+        "id": "painpoints",
+        "text": "What pain points do you have with your current website?",
         "type": "checkbox",
         "placeholder": "",
         "answers": [
             { 
-                "other_vendors": "I visited other vendors" 
+                "outdated": "Design is outdated" 
             },
             { 
-                "price_quotes": "I requested an explicit quote"
+                "editorial": "Hard to add or edit content"
             },
             { 
-                "networking": "I did some networking"
+                "developers": "Developers are hard to reach or slow"
+            },
+            { 
+                "functionality": "Missing functionality"
+            },
+            { 
+                "goesdown": "Crashes frequently"
             }
         ]
     },{
-        "id": 5,
-        "text": "Would you recommend Mugo to someone in the industry?",
-        "type": "radio",
-        "placeholder": "",
-        "answers": [
-            { 
-                "maybe": "I think I might" 
-            },
-            { 
-                "yes": "I think I would"
-            },
-            { 
-                "no": "I don't think so"
-            }
-        ]
+        "id": "other-painpoints",
+        "text": "",
+        "type": "textarea",
+        "placeholder": "Other pain points or comments.",
+        "answers": []
     }
 ]
 JSON;
@@ -69,10 +43,10 @@ JSON;
 $opts = array(
     'currentYear' => date( "Y" ),
     'formUri' => $_SERVER[ 'REQUEST_URI' ],
-    'mainHeading' => 'Please take a few moments to fill in our survey!',
-    'submittedHeading' => 'Thank you for taking the time to do our survey!',
+    'mainHeading' => 'Website satisfaction survey',
+    'submittedHeading' => 'Thank you for taking the time to do our survey! Stay awhile and chat with us :)',
     'submitButtonText' => 'Submit',
-    'subHeading' => 'Some instructions',
+    'subHeading' => 'Please fill in our quick website survey for a chance to win Bose noise-cancelling headphones!',
     'surveyQuestions' => json_decode( $json, true ),
     'title' => 'Mugo Survey',
 );

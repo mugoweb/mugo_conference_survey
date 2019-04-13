@@ -1,7 +1,7 @@
 <?php
 
 echo <<<HTML
-<div class="form-group my-5">
+<div class="form-group">
     <label class="form-question" for="question{$question[ 'id' ]}">{$question[ 'text' ]}</label>
     <input 
         class="form-control"

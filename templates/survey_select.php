@@ -11,7 +11,7 @@ foreach ( $question[ 'answers' ] as $answer ) {
 $question['placeholder'] = strtolower( $question[ 'placeholder' ] );
 
 echo <<<HTML
-<div class="form-group my-5">
+<div class="form-group">
     <label class="form-question" for="question{$question[ 'id' ]}">{$question[ 'text' ]}</label>
     <select 
         class="form-control"
