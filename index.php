@@ -40,11 +40,15 @@ $json = <<<JSON
 ]
 JSON;
 
+$pageUriWithoutGetParams = parse_url( $_SERVER[ "REQUEST_URI" ], PHP_URL_PATH );
+
 $opts = array(
     'currentYear' => date( "Y" ),
-    'formUri' => $_SERVER[ 'REQUEST_URI' ],
+    'formUri' => $pageUriWithoutGetParams,
     'mainHeading' => 'Website satisfaction survey',
-    'submittedHeading' => 'Thank you for taking the time to do our survey!<br>Stay for a bit and chat with us :)',
+    'submittedHeading' => 'Thank you for taking the time to do our survey!<br>Stay for a bit and chat with us :)<br><br><br><br><a class="btn btn-outline-primary no-background" href="'
+        . $pageUriWithoutGetParams
+        . '">Start again</a>',
     'submitButtonText' => 'Submit',
     'subHeading' => 'Please fill in our quick website survey for a chance to win Bose noise-cancelling headphones!',
     'surveyQuestions' => json_decode( $json, true ),
