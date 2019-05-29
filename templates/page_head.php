@@ -1,6 +1,6 @@
 <?php
 
-if ( isset( $opts[ 'submittedMode' ] ) ) {
+if ( isset( $opts[ 'confirmationMode' ] ) ) {
     $opts[ 'subHeading' ] = $opts[ 'submittedHeading' ];
 }
 

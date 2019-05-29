@@ -53,22 +53,32 @@ $opts = array(
 
 // if something was posted
 if( isset( $_POST[ 'submit' ] ) ) {
-    // filter the posted values
-    $post = array(
-        'name' => filter_var( $_POST[ 'name' ], FILTER_SANITIZE_STRING ),
-        'email' => filter_var( $_POST[ 'email' ], FILTER_SANITIZE_EMAIL ),
-    );
-    for ( $x = 1; $x <= sizeof( $opts[ 'surveyQuestions' ] ); $x++ ) {
-        if ( is_array($_POST[ 'question' . $x ] ) ) {
-            $post[ 'question' . $x ] = json_encode( $_POST[ 'question' . $x ] );
-        } else {
-            $post[ 'question' . $x ] = filter_var( $_POST[ 'question' . $x ], FILTER_SANITIZE_ENCODED );
+    // if the form was submitted via AJAX
+    // (NOTE: AJAX submission requires manually appending an 'ajax' form field -- the HTML form does NOT have an input
+    // named 'ajax' so a regular submit which doesn't inject this value will never be processed)
+    if ( $_POST[ 'ajax' ] ) {
+        // filter the posted values
+        $post = array(
+            'name' => filter_var( $_POST[ 'name' ], FILTER_SANITIZE_STRING ),
+            'email' => filter_var( $_POST[ 'email' ], FILTER_SANITIZE_EMAIL ),
+        );
+        for ( $x = 1; $x <= sizeof( $opts[ 'surveyQuestions' ] ); $x++ ) {
+            if ( is_array($_POST[ 'question' . $x ] ) ) {
+                $post[ 'question' . $x ] = json_encode( $_POST[ 'question' . $x ] );
+            } else {
+                $post[ 'question' . $x ] = filter_var( $_POST[ 'question' . $x ], FILTER_SANITIZE_ENCODED );
+            }
         }
+        // store the posted values
+        file_put_contents('survey.log', json_encode( $post ).PHP_EOL , FILE_APPEND | LOCK_EX );
+        // exit without producing any HTML output
+        exit;
     }
-    // store the posted values
-    file_put_contents('survey.log', json_encode( $post ).PHP_EOL , FILE_APPEND | LOCK_EX );
-    // let the rest of the script know we're in submitted mode
-    $opts['submittedMode'] = true;
+}
+
+// if we're in confirmation mode, let the rest of the scripts know
+if ( isset( $_GET[ 'confirmationMode' ] ) ) {
+    $opts[ 'confirmationMode' ] = true;
 }
 
 include "./templates/page_head.php";

@@ -1,6 +1,6 @@
 <?php
 
-if ( isset( $opts[ 'submittedMode' ] ) ) {
+if ( isset( $opts[ 'confirmationMode' ] ) ) {
     return;
 }
 
@@ -62,7 +62,7 @@ echo <<<HTML
         <input name="submit" value="true" hidden>
         <div class="row align-items-center">
             <div class="col-12 col-sm-auto mb-3 mb-sm-0">
-                <button type="submit" class="btn btn-outline-primary no-background">{$opts[ 'submitButtonText' ]}</button>
+                <button type="submit" class="btn btn-outline-primary form-submit-button no-background">{$opts[ 'submitButtonText' ]}</button>
             </div>
         </div>
     </form>
