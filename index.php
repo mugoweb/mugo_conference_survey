@@ -6,35 +6,105 @@ $json = <<<JSON
         "id": 1,
         "text": "",
         "type": "input",
-        "placeholder": "Organization",
+        "placeholder": "Phone",
         "answers": []
     },{
         "id": 2,
-        "text": "What pain points do you have with your current website?",
+        "text": "",
+        "type": "input",
+        "placeholder": "Organization",
+        "answers": []
+    },{
+        "id": 3,
+        "text": "Do you love your website?",
         "type": "checkbox",
         "placeholder": "",
         "answers": [
             { 
-                "outdated": "Design is outdated" 
+                "yes": "Yes" 
             },
             { 
-                "editorial": "Hard to add or edit content"
-            },
-            { 
-                "developers": "Developers are hard to reach or slow"
-            },
-            { 
-                "functionality": "Missing functionality"
-            },
-            { 
-                "goesdown": "Crashes frequently"
+                "no": "No"
             }
         ]
     },{
-        "id": 3,
+        "id": 4,
+        "text": "Is the content easy to manage?",
+        "type": "checkbox",
+        "placeholder": "",
+        "answers": [
+            { 
+                "yes": "Yes" 
+            },
+            { 
+                "sort_of": "Sort of"
+            },
+            {
+                "no": "No"
+            }
+        ]
+    },{
+        "id": 5,
+        "text": "Is the website flexible enough to do everything required?",
+        "type": "checkbox",
+        "placeholder": "",
+        "answers": [
+            { 
+                "yes": "Yes" 
+            },
+            {
+                "no": "No"
+            }
+        ]
+    },{
+        "id": 6,
+        "text": "Do your patrons like your website?",
+        "type": "checkbox",
+        "placeholder": "",
+        "answers": [
+            { 
+                "yes": "Yes" 
+            },
+            {
+                "no": "No"
+            }
+        ]
+    },{
+        "id": 7,
+        "text": "Does your website have all of these features?",
+        "type": "checkbox",
+        "placeholder": "",
+        "answers": [
+            { 
+                "mobile": "Mobile-friendly" 
+            },
+            { 
+                "eventreg": "Event registration, including wait lists and payment processing" 
+            },
+            {
+                "roombookings": "Room bookings, including cancellations"
+            },
+            {
+                "languages": "Multiple languages"
+            },
+            {
+                "openinghours": "Dynamic display of opening hours"
+            },
+            {
+                "search": "Catalog and resource search"
+            }
+        ]
+    },{
+        "id": 8,
+        "text": "Is your library part of a library system, and if so, does each branch get its own website?",
+        "type": "input",
+        "placeholder": "",
+        "answers": []
+    },{
+        "id": 300,
         "text": "",
         "type": "textarea",
-        "placeholder": "Other pain points or comments.",
+        "placeholder": "Other comments.",
         "answers": []
     }
 ]
